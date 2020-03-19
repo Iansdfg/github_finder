@@ -13,7 +13,9 @@ class App extends Component {
     });
 
     const res = await axios
-    .get('https://api.github.com/users');
+    .get(`https://api.github.com/users?clint_id=
+    ${process.env.REACT_APP_GITHUB_CLIENT_ID}&clint_secret=
+    ${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
     this.setState({
       user: res.data,
